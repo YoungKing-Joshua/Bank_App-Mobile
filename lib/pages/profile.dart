@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:b/components/my_button2.dart';
+import 'package:b/components/my_button3.dart';
 import 'package:b/components/my_textfield.dart';
 import 'package:b/components/square_tile.dart';
 
@@ -70,6 +71,9 @@ class Profile extends StatelessWidget {
               ),
             ),
             MyButton(
+              onTap: signUserIn,
+            ),
+            MyButton3(
               onTap: signUserIn,
             ),
             Row(
