@@ -66,40 +66,48 @@ class Home extends StatelessWidget {
                 color: Color(0xFF022E64),
               ),
               child: Stack(children: [
-                Positioned(
-                    top: 5,
-                    left: 340,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(7),
-                      child: Container(
-                        height: 40,
-                        width: 40,
-                        color: Color.fromRGBO(250, 250, 250, .1),
-                        child: Icon(
-                          Icons.notification_add_outlined,
-                          size: 30,
-                          color: Colors.white,
-                        ),
-                      ),
-                    )),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        ClipRRect(
+                            child: Image.asset('lib/images/bnk',
+                                width: 81, height: 32)),
+                      ],
+                    ),
+                  ],
+                ),
                 Padding(
                   padding: const EdgeInsets.only(top: 15, left: 20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  child: Row(
                     children: [
-                      Text(
-                        'Good afternoon',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 11,
-                            color: Color.fromARGB(255, 224, 223, 223)),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Image.asset('lib/images/face2',
+                              height: 42, width: 52),
+                        ],
                       ),
-                      Text(
-                        'YoungKing Joshua',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16,
-                            color: Colors.white),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Good afternoon',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 11,
+                                color: Color.fromARGB(255, 224, 223, 223)),
+                          ),
+                          Text(
+                            'YoungKing Joshua',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16,
+                                color: Colors.white),
+                          ),
+                        ],
                       ),
                     ],
                   ),
