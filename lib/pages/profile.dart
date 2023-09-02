@@ -87,30 +87,10 @@ class Profile extends StatelessWidget {
             MyButton3(
               onTap: signUserIn,
             ),
-            SizedBox(height: 70),
+            SizedBox(height: 50),
             AppVersion(
               onTap: signUserIn,
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'App Version',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 12,
-                        fontFamily: 'Open Sans',
-                        fontWeight: FontWeight.w400,
-                        letterSpacing: 0.18,
-                      ),
-                    )
-                  ],
-                ),
-              ],
-            )
           ],
         ),
       ),
