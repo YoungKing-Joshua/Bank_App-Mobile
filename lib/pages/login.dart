@@ -22,47 +22,24 @@ class LoginPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 50),
-
-              // logo
               Image.asset('lib/images/bnk'),
-
-              const SizedBox(height: 62, width: 157),
-
-              const SizedBox(height: 25),
-
-              // username textfield
+              const SizedBox(height: 91),
               MyTextField(
                 controller: usernameController,
                 hintText: 'Email',
                 obscureText: false,
               ),
-
-              const SizedBox(height: 10),
+              const SizedBox(height: 18),
               MyTextField(
                 controller: passwordController,
                 hintText: 'Password',
                 obscureText: true,
               ),
-
-              const SizedBox(height: 10),
-
-              // forgot password?
-              const SizedBox(height: 25),
-
-              // sign in button
+              const SizedBox(height: 68),
               MyButton(
-                onTap: signUserIn,
+                onTap: signUserIn
               ),
-
-              const SizedBox(height: 50),
-
-              const SizedBox(height: 50),
-
-              // google + apple sign in buttons
-              const SizedBox(height: 50),
-
-              // not a member? register now
+              const SizedBox(height: 224),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
