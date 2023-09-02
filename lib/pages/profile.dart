@@ -66,9 +66,9 @@ class Profile extends StatelessWidget {
             ),
             Container(
               width: double.infinity,
-              height: 200,
+              height: 156,
               decoration: BoxDecoration(
-                color: Color(0xFF022E34),
+                color: Color(0xFFFDF8EC),
               ),
             ),
             MyButton(

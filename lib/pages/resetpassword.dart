@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:b/components/resetbutton.dart';
+import 'package:b/components/changebutton.dart';
 import 'package:b/components/my_textfield.dart';
 import 'package:b/components/square_tile.dart';
 
-class ForgotPassword extends StatelessWidget {
-  ForgotPassword({super.key});
+class ResetPassword extends StatelessWidget {
+  ResetPassword({super.key});
 
   // text editing controllers
   final usernameController = TextEditingController();
@@ -71,18 +71,23 @@ class ForgotPassword extends StatelessWidget {
                   const SizedBox(height: 87),
                   MyTextField(
                     controller: usernameController,
+                    hintText: 'Old Password',
+                    obscureText: false,
+                  ),
+                  const SizedBox(height: 16),
+                  MyTextField(
+                    controller: usernameController,
                     hintText: 'New Password',
                     obscureText: true,
                   ),
-                  const SizedBox(height: 18),
+                  const SizedBox(height: 16),
                   MyTextField(
                     controller: passwordController,
                     hintText: 'Confirm New Password',
                     obscureText: true,
                   ),
-                  const SizedBox(height: 68),
-                  MyButton(onTap: signUserIn),
-                  const SizedBox(height: 224),
+                  const SizedBox(height: 16),
+                  ChangePassword(onTap: signUserIn),
                 ],
               ),
             ),
