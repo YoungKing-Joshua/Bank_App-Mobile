@@ -1,3 +1,4 @@
+import 'package:b/components/app_version.dart';
 import 'package:flutter/material.dart';
 import 'package:b/components/my_button2.dart';
 import 'package:b/components/my_button3.dart';
@@ -76,19 +77,38 @@ class Profile extends StatelessWidget {
             MyButton3(
               onTap: signUserIn,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            Container(
+              width: double.infinity,
+              height: 66,
+              decoration: BoxDecoration(
+                color: Color(0xFF022E34),
+              ),
+            ),
+            MyButton3(
+              onTap: signUserIn,
+            ),
+            SizedBox(height: 70),
+            AppVersion(
+              onTap: signUserIn,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(
-                  'Forgot Password?',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 12,
-                    fontFamily: 'Open Sans',
-                    fontWeight: FontWeight.w400,
-                    letterSpacing: 0.18,
-                  ),
-                )
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'App Version',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontFamily: 'Open Sans',
+                        fontWeight: FontWeight.w400,
+                        letterSpacing: 0.18,
+                      ),
+                    )
+                  ],
+                ),
               ],
             )
           ],
