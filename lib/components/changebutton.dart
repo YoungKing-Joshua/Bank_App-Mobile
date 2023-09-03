@@ -10,7 +10,7 @@ class ChangePassword extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 16),
+        margin: const EdgeInsets.symmetric(horizontal: 0),
         height: 56,
         decoration: BoxDecoration(
           color: Color(0xFFE6B014),

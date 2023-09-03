@@ -2,6 +2,8 @@ import 'package:b/pages/forgotpassword.dart';
 import 'package:b/pages/home.dart';
 import 'package:b/pages/login.dart';
 import 'package:b/pages/profile.dart';
+import 'package:b/pages/splash.dart';
+import 'package:b/widgets/bottomprofile.dart';
 import 'package:flutter/material.dart';
 import 'package:b/pages/transaction.dart';
 import 'package:b/pages/profile2.dart';

@@ -13,6 +13,7 @@ class MyButton extends StatelessWidget {
         margin: const EdgeInsets.symmetric(horizontal: 16),
         height: 56,
         decoration: BoxDecoration(
+          
           color: Color(0xFFE6B014),
           borderRadius: BorderRadius.circular(16),
         ),
@@ -24,6 +25,7 @@ class MyButton extends StatelessWidget {
               fontSize: 20,
               fontFamily: 'Open Sans',
               fontWeight: FontWeight.w700,
+              height: 1.40,
               letterSpacing: 0.20,
             ),
           ),

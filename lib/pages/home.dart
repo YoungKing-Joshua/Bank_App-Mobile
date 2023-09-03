@@ -86,7 +86,7 @@ class Home extends StatelessWidget {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Image.asset('lib/images/face2',
+                          Image.asset('lib/images/Union',
                               height: 42, width: 52),
                         ],
                       ),

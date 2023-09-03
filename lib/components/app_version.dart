@@ -10,24 +10,28 @@ class AppVersion extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(25),
         margin: const EdgeInsets.symmetric(horizontal: 0),
+        height: 56,
         decoration: BoxDecoration(
-          color: Color.fromARGB(255, 243, 238, 238),
+          border: Border.all(
+            color: Colors.black,
+            width: .1,
+          ),
+          color: Colors.white,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Center(
               child: Text(
-                'Login',
+                'App Version',
                 style: TextStyle(
-                  color: Color(0xFF212121),
-                  fontSize: 14,
+                  color: Color(0xFF022E64),
+                  fontSize: 12,
                   fontFamily: 'Open Sans',
-                  fontWeight: FontWeight.w700,
+                  fontWeight: FontWeight.w600,
                   height: 1.40,
-                  letterSpacing: 0.20,
+                  letterSpacing: 0.18,
                 ),
               ),
             ),

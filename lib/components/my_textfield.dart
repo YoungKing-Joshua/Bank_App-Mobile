@@ -33,7 +33,14 @@ class MyTextField extends StatelessWidget {
               fillColor: Colors.grey.shade200,
               filled: true,
               hintText: hintText,
-              hintStyle: TextStyle(color: Colors.grey[500])),
+              hintStyle: TextStyle(
+                color: Color(0xFF212121),
+                fontSize: 14,
+                fontFamily: 'Open Sans',
+                fontWeight: FontWeight.w400,
+                height: 1.40,
+                letterSpacing: 0.20,
+              )),
         ),
       ),
     );
