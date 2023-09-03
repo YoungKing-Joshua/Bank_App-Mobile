@@ -28,6 +28,7 @@ class _ProfileState extends State<Profile> {
       bottomNavigationBar: BottomAppBar(
         height: 41,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               decoration: BoxDecoration(),
@@ -99,6 +100,243 @@ class _ProfileState extends State<Profile> {
                   Image.asset(
                     'lib/images/Union(1).png',
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 24),
+                    child: Container(
+                      width: 185,
+                      height: 133,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(),
+                            child: Container(
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 8, vertical: 4),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+                                          child: Opacity(
+                                            opacity: 0.80,
+                                            child: Text(
+                                              'FIRST NAME',
+                                              style: TextStyle(
+                                                color: Color(0xFF022E64),
+                                                fontSize: 10,
+                                                fontFamily: 'Open Sans',
+                                                fontWeight: FontWeight.w600,
+                                                height: 1.20,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Opacity(
+                                          opacity: 0.80,
+                                          child: Text(
+                                            'JOHN',
+                                            style: TextStyle(
+                                              color: Color(0xFF022E64),
+                                              fontSize: 14,
+                                              fontFamily: 'Open Sans',
+                                              fontWeight: FontWeight.w400,
+                                              height: 1.20,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 8, vertical: 4),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+                                          child: Opacity(
+                                            opacity: 0.80,
+                                            child: Text(
+                                              'OTHER NAMES',
+                                              style: TextStyle(
+                                                color: Color(0xFF022E64),
+                                                fontSize: 10,
+                                                fontFamily: 'Open Sans',
+                                                fontWeight: FontWeight.w600,
+                                                height: 1.20,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Opacity(
+                                          opacity: 0.80,
+                                          child: Text(
+                                            'JIMOH',
+                                            style: TextStyle(
+                                              color: Color(0xFF022E64),
+                                              fontSize: 14,
+                                              fontFamily: 'Open Sans',
+                                              fontWeight: FontWeight.w400,
+                                              height: 1.20,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 11),
+                          Container(
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8, vertical: 4),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(
+                                        child: Opacity(
+                                          opacity: 0.80,
+                                          child: Text(
+                                            'GENDER',
+                                            style: TextStyle(
+                                              color: Color(0xFF022E64),
+                                              fontSize: 10,
+                                              fontFamily: 'Open Sans',
+                                              fontWeight: FontWeight.w600,
+                                              height: 1.20,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Opacity(
+                                        opacity: 0.80,
+                                        child: Text(
+                                          'MALE',
+                                          style: TextStyle(
+                                            color: Color(0xFF022E64),
+                                            fontSize: 14,
+                                            fontFamily: 'Open Sans',
+                                            fontWeight: FontWeight.w400,
+                                            height: 1.20,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 25, vertical: 4),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(
+                                        child: Opacity(
+                                          opacity: 0.80,
+                                          child: Text(
+                                            'TITLE',
+                                            style: TextStyle(
+                                              color: Color(0xFF022E64),
+                                              fontSize: 10,
+                                              fontFamily: 'Open Sans',
+                                              fontWeight: FontWeight.w600,
+                                              height: 1.20,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Opacity(
+                                        opacity: 0.80,
+                                        child: Text(
+                                          'MR',
+                                          style: TextStyle(
+                                            color: Color(0xFF022E64),
+                                            fontSize: 14,
+                                            fontFamily: 'Open Sans',
+                                            fontWeight: FontWeight.w400,
+                                            height: 1.20,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(height: 11),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 4),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  child: Opacity(
+                                    opacity: 0.80,
+                                    child: Text(
+                                      'ID',
+                                      style: TextStyle(
+                                        color: Color(0xFF022E64),
+                                        fontSize: 10,
+                                        fontFamily: 'Open Sans',
+                                        fontWeight: FontWeight.w600,
+                                        height: 1.20,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Opacity(
+                                  opacity: 0.80,
+                                  child: Text(
+                                    '23399922',
+                                    style: TextStyle(
+                                      color: Color(0xFF022E64),
+                                      fontSize: 14,
+                                      fontFamily: 'Open Sans',
+                                      fontWeight: FontWeight.w400,
+                                      height: 1.20,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
@@ -115,10 +353,9 @@ class _ProfileState extends State<Profile> {
             MyButton3(
               onTap: signUserIn,
             ),
-                        MyButton4(
+            MyButton4(
               onTap: signUserIn,
             ),
-            
             Container(
               width: double.infinity,
               height: 48,
