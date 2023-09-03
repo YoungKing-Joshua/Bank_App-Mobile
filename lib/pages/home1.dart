@@ -11,7 +11,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomAppBar(
-        height: 41,
+        height: 72,
         child: Stack(
           children: <Widget>[
             // Top part with blue color

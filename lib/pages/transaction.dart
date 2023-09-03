@@ -14,49 +14,74 @@ class _TransactionState extends State<Transaction> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: SizedBox(child: _head()),
+        child: Column(
+          children: [
+            _head(),
+            Expanded(
+              child: CustomScrollView(
+                slivers: [
+                  SliverList(delegate: SliverChildBuilderDelegate(
+                    (context, index) {
+                      return ListTile(
+                        leading: ClipRRect(
+                          borderRadius:
+                              BorderRadius.circular(60.0), // Make it circular
+                          child: Container(
+                            width:
+                                32.0, // Adjust the size of the circular container
+                            height:
+                                32.0, // Adjust the size of the circular container
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [Color(0xFF022E64), Color(0xFF0E5CBD)],
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                              ),
+                            ), // Background color of the circle
+                            child: Center(
+                                child: Image.asset(
+                              'lib/images/money-recive.png',
+                            )),
+                          ),
+                        ),
+                        title: Text(
+                          'GHC 50.00',
+                          style: TextStyle(
+                            color: Color(0xFF212121),
+                            fontSize: 16,
+                            fontFamily: 'Open Sans',
+                            fontWeight: FontWeight.w700,
+                            height: 1.20,
+                          ),
+                        ),
+                        subtitle: Text(
+                          'Gift',
+                          style: TextStyle(
+                            color: Color(0xFF616161),
+                            fontSize: 12,
+                            fontFamily: 'Open Sans',
+                            fontWeight: FontWeight.w400,
+                            height: 1.40,
+                            letterSpacing: 0.18,
+                          ),
+                        ),
+                        trailing: Text(
+                          '01-02-2021',
+                          style: TextStyle(
+                            color: Color(0xFF616161),
+                            fontSize: 10,
+                            fontFamily: 'Open Sans',
+                            fontWeight: FontWeight.w400,
+                            height: 1.40,
+                            letterSpacing: 0.18,
+                          ),
+                        ),
+                      );
+                    },
+                  )),
+                ],
+              ),
             ),
-            SliverList(delegate: SliverChildBuilderDelegate(
-              (context, index) {
-                return ListTile(
-                  title: Text(
-                    'GHC 50.00',
-                    style: TextStyle(
-                      color: Color(0xFF212121),
-                      fontSize: 16,
-                      fontFamily: 'Open Sans',
-                      fontWeight: FontWeight.w700,
-                      height: 1.20,
-                    ),
-                  ),
-                  subtitle: Text(
-                    'Gift',
-                    style: TextStyle(
-                      color: Color(0xFF616161),
-                      fontSize: 12,
-                      fontFamily: 'Open Sans',
-                      fontWeight: FontWeight.w400,
-                      height: 1.40,
-                      letterSpacing: 0.18,
-                    ),
-                  ),
-                  trailing: Text(
-                    '01-02-2021',
-                    style: TextStyle(
-                      color: Color(0xFF616161),
-                      fontSize: 10,
-                      fontFamily: 'Open Sans',
-                      fontWeight: FontWeight.w400,
-                      height: 1.40,
-                      letterSpacing: 0.18,
-                    ),
-                  ),
-                );
-              },
-            ))
           ],
         ),
       ),
@@ -75,40 +100,63 @@ class _TransactionState extends State<Transaction> {
                 color: Color(0xFF022E64),
               ),
               child: Stack(children: [
-                Positioned(
-                    top: 5,
-                    left: 340,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(7),
-                      child: Container(
-                        height: 40,
-                        width: 40,
-                        color: Color.fromRGBO(250, 250, 250, .1),
-                        child: Icon(
-                          Icons.notification_add_outlined,
-                          size: 30,
-                          color: Colors.white,
-                        ),
-                      ),
-                    )),
                 Padding(
-                  padding: const EdgeInsets.only(top: 15, left: 20),
+                  padding: const EdgeInsets.only(right: 16),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        'Good afternoon',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 11,
-                            color: Color.fromARGB(255, 224, 223, 223)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          ClipRRect(
+                              child: Image.asset('lib/images/bnk',
+                                  width: 81, height: 32)),
+                        ],
                       ),
-                      Text(
-                        'YoungKing Joshua',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16,
-                            color: Colors.white),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 15, left: 16),
+                  child: Row(
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Image.asset('lib/images/Union.png',
+                              height: 42, width: 52),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 7),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 4),
+                              child: Text(
+                                'Good afternoon',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 11,
+                                    color: Color.fromARGB(255, 224, 223, 223)),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 4),
+                              child: Text(
+                                'Mr. John Jimoh',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontFamily: 'Open Sans',
+                                  fontWeight: FontWeight.w600,
+                                  height: 1.20,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),

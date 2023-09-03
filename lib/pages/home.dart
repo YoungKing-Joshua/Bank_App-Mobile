@@ -117,7 +117,7 @@ class Home extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(top: 4),
                               child: Text(
-                                'YoungKing Joshua',
+                                'Mr. John Jimoh',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w600,
                                     fontSize: 16,
