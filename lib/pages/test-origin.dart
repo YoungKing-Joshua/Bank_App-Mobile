@@ -4,14 +4,10 @@ class TrapeziumClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     final path = Path();
-    final double trapeziumHeight =
-        size.height; // Set the height of the trapezium
-
     path.moveTo(size.width, 0.0);
-    path.lineTo(size.width * 53 / 100,
-        0.0); // Adjust the points to create a right-angle trapezium
-    path.lineTo(size.width * 47 / 100, trapeziumHeight);
-    path.lineTo(size.width, trapeziumHeight);
+    path.lineTo(size.width * 53 / 100, 0.0);
+    path.lineTo(size.width * 1 / 3, size.height);
+    path.lineTo(size.width, size.height);
     path.close();
     return path;
   }
@@ -25,17 +21,20 @@ class TrapeziumStack extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        // Top part with blue color
         Container(
           decoration: BoxDecoration(
-            color: Colors.blue,
+            image: DecorationImage(
+              alignment: Alignment.centerLeft,
+              fit: BoxFit.fitHeight,
+              image: NetworkImage(
+                  'https://media.sproutsocial.com/uploads/2014/02/Facebook-Campaign-Article-Main-Image2.png'),
+            ),
           ),
         ),
-        // Bottom part with a white trapezium shape
         ClipPath(
           clipper: TrapeziumClipper(),
           child: Container(
-            color: Colors.white, // Set the color for the bottom part
+            color: Colors.white,
             padding: EdgeInsets.all(8.0),
             child: Column(
               children: <Widget>[

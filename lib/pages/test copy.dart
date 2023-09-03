@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 
 class TrapeziumClipper extends CustomClipper<Path> {
+  final Color topColor;
+  final Color bottomColor;
+
+  TrapeziumClipper({required this.topColor, required this.bottomColor});
+
   @override
   Path getClip(Size size) {
     final path = Path();
-    final double trapeziumHeight =
-        size.height; // Set the height of the trapezium
-
     path.moveTo(size.width, 0.0);
-    path.lineTo(size.width * 53 / 100,
-        0.0); // Adjust the points to create a right-angle trapezium
-    path.lineTo(size.width * 47 / 100, trapeziumHeight);
-    path.lineTo(size.width, trapeziumHeight);
+    path.lineTo(size.width * 30 / 70, 0.0);
+    path.lineTo(size.width * 1 / 3, size.height);
+    path.lineTo(size.width, size.height);
     path.close();
     return path;
   }
@@ -25,17 +26,16 @@ class TrapeziumStack extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        // Top part with blue color
         Container(
-          decoration: BoxDecoration(
-            color: Colors.blue,
-          ),
+          decoration: BoxDecoration(color: Colors.blue), // Top part color
         ),
-        // Bottom part with a white trapezium shape
         ClipPath(
-          clipper: TrapeziumClipper(),
+          clipper: TrapeziumClipper(
+            topColor: Colors.blue, // Top part color
+            bottomColor: Colors.white, // Bottom part color
+          ),
           child: Container(
-            color: Colors.white, // Set the color for the bottom part
+            color: Colors.white, // Background color of the bottom part
             padding: EdgeInsets.all(8.0),
             child: Column(
               children: <Widget>[

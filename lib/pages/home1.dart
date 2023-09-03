@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:b/components/app_version.dart';
+import 'package:b/pages/test.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -11,10 +12,57 @@ class Home extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: BottomAppBar(
         height: 41,
-        child: AppVersion(
-          onTap: signUserIn,
+        child: Stack(
+          children: <Widget>[
+            // Top part with blue color
+            Container(
+              decoration: BoxDecoration(
+                color: Color(0xFF022E64),
+              ),
+            ),
+            // Bottom part with a white trapezium shape
+            ClipPath(
+              clipper: TrapeziumClipper(),
+              child: Container(
+                color: Colors.white, // Set the color for the bottom part
+                padding: EdgeInsets.all(8.0),
+                child: Column(
+                  children: <Widget>[],
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                ),
+                width: double.infinity,
+              ),
+            ),
+          ],
         ),
       ),
+
+      /*Row(
+        children: [
+          Expanded(
+            flex: 1, // Adjust the flex values as needed
+            child: Container(
+              height: 41,
+              color: Color(0xFFE0AD0F), // Color for the left box
+              child: AppVersion(
+                onTap: signUserIn,
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 1, // Adjust the flex values as needed
+            child: Container(
+              height: 41,
+
+              color: Color(0xFFA07701), // Color for the right box
+              child: AppVersion(
+                onTap: signUserIn,
+              ),
+            ),
+          ),
+        ],
+      ),
+      */
       body: SafeArea(
         child: CustomScrollView(slivers: [
           SliverToBoxAdapter(

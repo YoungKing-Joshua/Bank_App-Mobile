@@ -3,6 +3,7 @@ import 'package:b/widgets/bottomprofile.dart';
 import 'package:flutter/material.dart';
 import 'package:b/components/my_button2.dart';
 import 'package:b/components/my_button3.dart';
+import 'package:b/components/my_button4.dart';
 import 'package:b/components/square_tile.dart';
 
 class Profile extends StatefulWidget {
@@ -26,8 +27,15 @@ class _ProfileState extends State<Profile> {
     return Scaffold(
       bottomNavigationBar: BottomAppBar(
         height: 41,
-        child: AppVersion(
-          onTap: signUserIn,
+        child: Row(
+          children: [
+            Container(
+              decoration: BoxDecoration(),
+              child: AppVersion(
+                onTap: signUserIn,
+              ),
+            ),
+          ],
         ),
       ),
       backgroundColor: Colors.white,
@@ -107,6 +115,10 @@ class _ProfileState extends State<Profile> {
             MyButton3(
               onTap: signUserIn,
             ),
+                        MyButton4(
+              onTap: signUserIn,
+            ),
+            
             Container(
               width: double.infinity,
               height: 48,
