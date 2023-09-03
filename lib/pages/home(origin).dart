@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:b/components/app_version.dart';
-import 'package:b/pages/test.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class HomeO extends StatelessWidget {
+  const HomeO({Key? key}) : super(key: key);
 
   void signUserIn() {}
 
@@ -11,58 +10,11 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomAppBar(
-        height: 72,
-        child: Stack(
-          children: <Widget>[
-            // Top part with blue color
-            Container(
-              decoration: BoxDecoration(
-                color: Color(0xFF022E64),
-              ),
-            ),
-            // Bottom part with a white trapezium shape
-            ClipPath(
-              clipper: TrapeziumClipper(),
-              child: Container(
-                color: Colors.white, // Set the color for the bottom part
-                padding: EdgeInsets.all(8.0),
-                child: Column(
-                  children: <Widget>[],
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                ),
-                width: double.infinity,
-              ),
-            ),
-          ],
+        height: 41,
+        child: AppVersion(
+          onTap: signUserIn,
         ),
       ),
-
-      /*Row(
-        children: [
-          Expanded(
-            flex: 1, // Adjust the flex values as needed
-            child: Container(
-              height: 41,
-              color: Color(0xFFE0AD0F), // Color for the left box
-              child: AppVersion(
-                onTap: signUserIn,
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 1, // Adjust the flex values as needed
-            child: Container(
-              height: 41,
-
-              color: Color(0xFFA07701), // Color for the right box
-              child: AppVersion(
-                onTap: signUserIn,
-              ),
-            ),
-          ),
-        ],
-      ),
-      */
       body: SafeArea(
         child: CustomScrollView(slivers: [
           SliverToBoxAdapter(
@@ -123,18 +75,25 @@ class Home extends StatelessWidget {
                 color: Color(0xFF022E64),
               ),
               child: Stack(children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        ClipRRect(
-                            child: Image.asset('lib/images/bnk',
-                                width: 81, height: 32)),
-                      ],
-                    ),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(right: 16),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          ClipRRect(
+                            child: Image.asset(
+                              'lib/images/bnk',
+                              width: 81,
+                              height: 32,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 15, left: 16),
@@ -165,7 +124,7 @@ class Home extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(top: 4),
                               child: Text(
-                                'YoungKing Joshua',
+                                'Mr. John Jimoh',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w600,
                                     fontSize: 16,

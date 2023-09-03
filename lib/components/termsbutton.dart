@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MyButton4 extends StatelessWidget {
+class TermsButton extends StatelessWidget {
   final Function()? onTap;
 
-  const MyButton4({super.key, required this.onTap});
+  const TermsButton({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class MyButton4 extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 17.52, vertical: 16),
-                    child: Text('Privacy Policy',
+                    child: Text('Terms and Conditions',
                         style: TextStyle(
                             color: Color(0xFF022E64),
                             fontSize: 14,

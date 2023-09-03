@@ -14,15 +14,17 @@ class AppVersion extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'App Version',
-              style: TextStyle(
-                color: Color(0xFF022E64),
-                fontSize: 12,
-                fontFamily: 'Open Sans',
-                fontWeight: FontWeight.w600,
-                height: 1.40,
-                letterSpacing: 0.18,
+            const Center(
+              child: Text(
+                'App Version',
+                style: TextStyle(
+                  color: Color(0xFF022E64),
+                  fontSize: 12,
+                  fontFamily: 'Open Sans',
+                  fontWeight: FontWeight.w600,
+                  height: 1.40,
+                  letterSpacing: 0.18,
+                ),
               ),
             ),
           ],

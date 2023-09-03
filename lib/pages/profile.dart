@@ -1,8 +1,9 @@
 import 'package:b/components/app_version.dart';
+import 'package:b/components/termsbutton.dart';
 import 'package:b/widgets/bottomprofile.dart';
 import 'package:flutter/material.dart';
-import 'package:b/components/my_button2.dart';
-import 'package:b/components/my_button3.dart';
+import 'package:b/components/changepws.dart';
+import 'package:b/components/logoutbutton.dart';
 import 'package:b/components/my_button4.dart';
 import 'package:b/components/square_tile.dart';
 
@@ -50,19 +51,25 @@ class _ProfileState extends State<Profile> {
                 color: Color(0xFF022E64),
               ),
               child: Stack(children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        ClipRRect(
+                Padding(
+                  padding: const EdgeInsets.only(right: 16),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          ClipRRect(
                             child: Image.asset(
-                          'lib/images/bnk',
-                        )),
-                      ],
-                    ),
-                  ],
+                              'lib/images/bnk',
+                              width: 81,
+                              height: 32,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 16),
@@ -346,14 +353,36 @@ class _ProfileState extends State<Profile> {
               decoration: BoxDecoration(
                 color: Color(0x51E1E6F0),
               ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 8),
+                          child: Text('Account Settings',
+                              style: TextStyle(
+                                color: Color(0xFF001530),
+                                fontSize: 14,
+                                fontFamily: 'Open Sans',
+                                fontWeight: FontWeight.w600,
+                                height: 1.40,
+                              )),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ),
             MyButton(
               onTap: signUserIn,
             ),
-            MyButton3(
-              onTap: signUserIn,
-            ),
-            MyButton4(
+            LogoutButton(
               onTap: signUserIn,
             ),
             Container(
@@ -362,8 +391,36 @@ class _ProfileState extends State<Profile> {
               decoration: BoxDecoration(
                 color: Color(0x51E1E6F0),
               ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 8),
+                          child: Text('About',
+                              style: TextStyle(
+                                color: Color(0xFF001530),
+                                fontSize: 14,
+                                fontFamily: 'Open Sans',
+                                fontWeight: FontWeight.w600,
+                                height: 1.20,
+                              )),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ),
-            MyButton3(
+            TermsButton(
+              onTap: signUserIn,
+            ),
+            MyButton4(
               onTap: signUserIn,
             ),
           ],

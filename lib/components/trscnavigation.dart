@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class HomeNav extends StatelessWidget {
+class TrscNav extends StatelessWidget {
   final Function()? onTap;
 
-  const HomeNav({super.key, required this.onTap});
+  const TrscNav({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +19,13 @@ class HomeNav extends StatelessWidget {
                 children: [
                   ClipRRect(
                     child: Image.asset(
-                      'lib/images/home-icon.png',
+                      'lib/images/transaction-blue.png',
                     ),
                   ),
                   Text(
-                    'Home',
+                    'Transactions',
                     style: TextStyle(
-                      color: Color(0xFFE6B014),
+                      color: Color(0xFF022E64),
                       fontSize: 12,
                       fontFamily: 'Open Sans',
                       fontWeight: FontWeight.w600,

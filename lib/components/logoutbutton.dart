@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MyButton4 extends StatelessWidget {
+class LogoutButton extends StatelessWidget {
   final Function()? onTap;
 
-  const MyButton4({super.key, required this.onTap});
+  const LogoutButton({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +27,11 @@ class MyButton4 extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  Image.asset('lib/images/logout.png', height: 28, width: 28),
                   Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 17.52, vertical: 16),
-                    child: Text('Privacy Policy',
+                    child: Text('Logout',
                         style: TextStyle(
                             color: Color(0xFF022E64),
                             fontSize: 14,
