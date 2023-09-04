@@ -22,6 +22,7 @@ class TrscNav extends StatelessWidget {
                       'lib/images/transaction-blue.png',
                     ),
                   ),
+                  SizedBox(height: 4),
                   Text(
                     'Transactions',
                     style: TextStyle(

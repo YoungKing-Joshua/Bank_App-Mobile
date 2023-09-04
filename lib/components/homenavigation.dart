@@ -22,6 +22,7 @@ class HomeNav extends StatelessWidget {
                       'lib/images/home-icon.png',
                     ),
                   ),
+                  SizedBox(height: 4),
                   Text(
                     'Home',
                     style: TextStyle(

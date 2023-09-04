@@ -1,9 +1,6 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:b/pages/test.dart';
-import 'package:b/data/money.dart';
-import 'package:flutter/services.dart' as rootBundle;
+import 'package:b/data/moneyget.dart';
 
 class Transaction extends StatefulWidget {
   const Transaction({Key? key}) : super(key: key);
@@ -18,107 +15,52 @@ class _TransactionState extends State<Transaction> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-            child: Column(
-          children: [_buildHeader(), Expanded(child: _scroll())],
-        )),
-        bottomNavigationBar: BottomAppBar(
-          height: 72,
-          child: Stack(
-            children: <Widget>[
-              // Top part with blue color
-              Container(
-                decoration: BoxDecoration(
-                  color: Color(0xFF022E64),
-                ),
-              ),
-              // Bottom part with a white trapezium shape
-              ClipPath(
-                clipper: TrapeziumClipper(),
-                child: Container(
-                  color: Colors.white, // Set the color for the bottom part
-                  padding: EdgeInsets.all(8.0),
-                  child: Column(
-                    children: <Widget>[],
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                  ),
-                  width: double.infinity,
-                ),
-              ),
-            ],
-          ),
-        ));
-  }
-
-  Widget _scroll() {
-    return FutureBuilder<List<CustomerTransactionData>>(
-      future: ReadJsonData(),
-      builder: (context, data) {
-        if (data.hasError) {
-          return Center(child: Text("${data.error}"));
-        } else if (data.hasData) {
-          var items = data.data as List<CustomerTransactionData>;
-          return ListView.builder(
-            itemCount: items.length,
-            itemBuilder: (context, index) {
-              return ListTile(
-                leading: ClipRRect(
-                  borderRadius: BorderRadius.circular(60.0),
-                  child: Container(
-                    width: 32.0,
-                    height: 32.0,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [Color(0xFF022E64), Color(0xFF0E5CBD)],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                      ),
-                    ),
-                    child: Center(
-                      child: Image.asset(
-                        'lib/images/money-recive.png',
-                      ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            _buildHeader(),
+            Expanded(
+              child: CustomScrollView(
+                slivers: [
+                  SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      (context, index) {
+                        return _buildTransactionItem();
+                      },
                     ),
                   ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        height: 72,
+        child: Stack(
+          children: <Widget>[
+            // Top part with blue color
+            Container(
+              decoration: BoxDecoration(
+                color: Color(0xFF022E64),
+              ),
+            ),
+            // Bottom part with a white trapezium shape
+            ClipPath(
+              clipper: TrapeziumClipper(),
+              child: Container(
+                color: Colors.white, // Set the color for the bottom part
+                padding: EdgeInsets.all(8.0),
+                child: Column(
+                  children: <Widget>[],
+                  crossAxisAlignment: CrossAxisAlignment.center,
                 ),
-                title: Text(
-                  items[index].transactionAmount.toString(),
-                  style: TextStyle(
-                    color: Color(0xFF212121),
-                    fontSize: 16,
-                    fontFamily: 'Open Sans',
-                    fontWeight: FontWeight.w700,
-                    height: 1.20,
-                  ),
-                ),
-                subtitle: Text(
-                  items[index].transactionNarration.toString(),
-                  style: TextStyle(
-                    color: Color(0xFF616161),
-                    fontSize: 12,
-                    fontFamily: 'Open Sans',
-                    fontWeight: FontWeight.w400,
-                    height: 1.40,
-                    letterSpacing: 0.18,
-                  ),
-                ),
-                trailing: Text(
-                  items[index].transactionDate.toString(),
-                  style: TextStyle(
-                    color: Color(0xFF616161),
-                    fontSize: 10,
-                    fontFamily: 'Open Sans',
-                    fontWeight: FontWeight.w400,
-                    height: 1.40,
-                    letterSpacing: 0.18,
-                  ),
-                ),
-              );
-            },
-          );
-        }
-        return Center(child: CircularProgressIndicator());
-      },
+                width: double.infinity,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
@@ -273,13 +215,59 @@ class _TransactionState extends State<Transaction> {
     );
   }
 
-  Future<List<CustomerTransactionData>> ReadJsonData() async {
-    final jsondata =
-        await rootBundle.rootBundle.loadString('lib/data/customer_data.json');
-    final list = json.decode(jsondata) as List<dynamic>;
-
-    return list.map((e) => CustomerTransactionData.fromJson(e)).toList();
-
-    
+  Widget _buildTransactionItem() {
+    return ListTile(
+      leading: ClipRRect(
+        borderRadius: BorderRadius.circular(60.0),
+        child: Container(
+          width: 32.0,
+          height: 32.0,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xFF022E64), Color(0xFF0E5CBD)],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+          ),
+          child: Center(
+            child: Image.asset(
+              'lib/images/money-recive.png',
+            ),
+          ),
+        ),
+      ),
+      title: Text(
+        'GHC 50.00',
+        style: TextStyle(
+          color: Color(0xFF212121),
+          fontSize: 16,
+          fontFamily: 'Open Sans',
+          fontWeight: FontWeight.w700,
+          height: 1.20,
+        ),
+      ),
+      subtitle: Text(
+        'Gift',
+        style: TextStyle(
+          color: Color(0xFF616161),
+          fontSize: 12,
+          fontFamily: 'Open Sans',
+          fontWeight: FontWeight.w400,
+          height: 1.40,
+          letterSpacing: 0.18,
+        ),
+      ),
+      trailing: Text(
+        '01-02-2021',
+        style: TextStyle(
+          color: Color(0xFF616161),
+          fontSize: 10,
+          fontFamily: 'Open Sans',
+          fontWeight: FontWeight.w400,
+          height: 1.40,
+          letterSpacing: 0.18,
+        ),
+      ),
+    );
   }
 }
