@@ -23,6 +23,7 @@ class _Bottomsheet extends State<Bottomsheet> {
   Future<dynamic> showSheet(BuildContext context) {
     return showModalBottomSheet(
         context: context,
+        backgroundColor: Colors.transparent,
         builder: (BuildContext context) {
           return SizedBox(
               child: Container(
