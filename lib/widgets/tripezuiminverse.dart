@@ -19,4 +19,3 @@ class TrapeziumClipper extends CustomClipper<Path> {
   @override
   bool shouldReclip(TrapeziumClipper oldClipper) => false;
 }
-
