@@ -1,9 +1,11 @@
 import 'package:b/components/app_version.dart';
 import 'package:flutter/material.dart';
-import 'package:b/components/my_button.dart';
+import 'package:b/components/loginB.dart';
 import 'package:b/components/homenavigation.dart';
 import 'package:b/components/trscnavigation.dart';
 import 'package:b/widgets/tripezuim.dart';
+import 'package:b/screen/home5.dart';
+import 'package:b/screen/transaction.dart';
 
 class ProfileBottom extends StatefulWidget {
   const ProfileBottom({Key? key}) : super(key: key);
@@ -19,7 +21,25 @@ class _ProfileBottomState extends State<ProfileBottom> {
   }
 }
 
-void signUserIn() {}
+void sendHome(BuildContext context) {
+  // Use Navigator to push a new route (page) onto the stack
+  Navigator.of(context).push(
+    MaterialPageRoute(
+      builder: (context) =>
+          Home(), // Replace YourNewPage with the desired page widget
+    ),
+  );
+}
+
+void sendTrsc(BuildContext context) {
+  // Use Navigator to push a new route (page) onto the stack
+  Navigator.of(context).push(
+    MaterialPageRoute(
+      builder: (context) =>
+          Transaction(), // Replace YourNewPage with the desired page widget
+    ),
+  );
+}
 
 BottomAppBar _bottom() {
   return BottomAppBar(
@@ -48,7 +68,7 @@ BottomAppBar _bottom() {
               flex: 1, // Adjust the flex values as needed
               child: Container(
                 child: HomeNav(
-                  onTap: signUserIn,
+                  onTap: sendHome,
                 ),
               ),
             ),
@@ -56,7 +76,7 @@ BottomAppBar _bottom() {
               flex: 1, // Adjust the flex values as needed
               child: Container(
                 child: TrscNav(
-                  onTap: signUserIn,
+                  onTap: sendTrsc,
                 ),
               ),
             ),

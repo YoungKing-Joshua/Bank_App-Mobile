@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class MyButton extends StatelessWidget {
+class ResetButton extends StatelessWidget {
   final Function()? onTap;
 
-  const MyButton({super.key, required this.onTap});
+  const ResetButton({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 0),
+        margin: const EdgeInsets.symmetric(horizontal: 16),
         height: 56,
         decoration: BoxDecoration(
           color: Color(0xFFE6B014),

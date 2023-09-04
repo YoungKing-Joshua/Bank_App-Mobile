@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
 class ChangePassword extends StatelessWidget {
-  final Function()? onTap;
+  final Function(BuildContext) onTap;
 
   const ChangePassword({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        onTap(context); // Pass the context to the callback
+      },
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 0),
+        margin: const EdgeInsets.symmetric(horizontal: 16),
         height: 56,
         decoration: BoxDecoration(
           color: Color(0xFFE6B014),

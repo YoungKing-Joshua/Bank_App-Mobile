@@ -8,7 +8,7 @@ import 'package:b/widgets/bottomprofile.dart';
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
-  void signUserIn() {}
+
 
   @override
   Widget build(BuildContext context) {

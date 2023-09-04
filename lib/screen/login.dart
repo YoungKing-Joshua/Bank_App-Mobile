@@ -1,3 +1,5 @@
+import 'package:b/pages/forgotpassword.dart';
+import 'package:b/screen/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:b/components/loginB.dart';
 import 'package:b/components/my_textfield.dart';
@@ -12,14 +14,33 @@ class LoginPage extends StatelessWidget {
   final passwordController = TextEditingController();
 
   // sign user in method
-  void signUserIn() {}
+  void signUserIn(BuildContext context) {
+  // Use Navigator to push a new route (page) onto the stack
+  Navigator.of(context).push(
+    MaterialPageRoute(
+      builder: (context) =>
+          Splash(), // Replace YourNewPage with the desired page widget
+    ),
+  );
+}
+
+ void sendForget(BuildContext context) {
+  // Use Navigator to push a new route (page) onto the stack
+  Navigator.of(context).push(
+    MaterialPageRoute(
+      builder: (context) =>
+          ForgotPassword(), // Replace YourNewPage with the desired page widget
+    ),
+  );
+}
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBody: true,
       backgroundColor: Color(0xFF022E64),
       bottomNavigationBar: BottomAppBar(
+        color: Color(0xFF022E64),
         height: 56,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -27,7 +48,7 @@ class LoginPage extends StatelessWidget {
             Container(
               padding: EdgeInsets.only(bottom: 42),
               child: Forget(
-                onTap: signUserIn,
+                onTap: sendForget,
               ),
             ),
           ],

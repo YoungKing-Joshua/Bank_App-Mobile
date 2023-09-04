@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 
 class HomeNav extends StatelessWidget {
-  final Function()? onTap;
+  final Function(BuildContext) onTap;
 
-  const HomeNav({super.key, required this.onTap});
+  HomeNav({required this.onTap});
+
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        onTap(context); // Pass the context to the callback
+      },
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 8),
         child: Center(

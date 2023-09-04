@@ -13,7 +13,7 @@ class ResetPassword extends StatelessWidget {
   final password3Controller = TextEditingController();
 
   // sign user in method
-  void SendLogin() {}
+  void signUserIn() {}
 
   @override
   Widget build(BuildContext context) {
