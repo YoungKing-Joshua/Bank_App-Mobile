@@ -1,5 +1,6 @@
 import 'package:b/components/app_version.dart';
 import 'package:b/components/termsbutton.dart';
+import 'package:b/screen/login.dart';
 import 'package:b/screen/resetpassword.dart';
 import 'package:b/widgets/bottomprofile.dart';
 import 'package:flutter/material.dart';
@@ -29,11 +30,19 @@ class _ProfileState extends State<Profile> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) =>
+            LoginPage(), // Replace YourNewPage with the desired page widget
+      ),
+    );
+  }
+  void logout(BuildContext context) {
+    // Use Navigator to push a new route (page) onto the stack
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) =>
             ResetPassword(), // Replace YourNewPage with the desired page widget
       ),
     );
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -344,7 +353,7 @@ class _ProfileState extends State<Profile> {
               onTap: sendProfile,
             ),
             LogoutButton(
-              onTap: signUserIn,
+              onTap: logout,
             ),
             Container(
               width: double.infinity,

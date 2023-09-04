@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:b/screen/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:b/widgets/tripezuim.dart';
 import 'package:b/data/money.dart';
@@ -42,7 +43,16 @@ class _TransactionState extends State<Transaction> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return GestureDetector(
+        onTap: () {
+          // Navigate to the desired page when tapped
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) =>
+                  Profile(), // Replace with your destination page
+            ),
+          );
+        }, child:Scaffold(
       body: SafeArea(
           child: Column(
         children: [_buildHeader(), Expanded(child: _scroll())],
@@ -91,7 +101,7 @@ class _TransactionState extends State<Transaction> {
         ),
       ),
     );
-  }
+  );}
 
   Widget _scroll() {
     return FutureBuilder<List<CustomerTransactionData>>(

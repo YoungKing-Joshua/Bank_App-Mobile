@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 class LogoutButton extends StatelessWidget {
-  final Function()? onTap;
+  Function(BuildContext) onTap;
 
-  const LogoutButton({super.key, required this.onTap});
+  LogoutButton({required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        onTap(context); // Pass the context to the callback
+      },
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 0),
         height: 56,
