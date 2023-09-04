@@ -1,8 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:b/pages/test.dart';
+import 'package:b/widgets/tripezuim.dart';
 import 'package:b/data/money.dart';
+import 'package:b/components/homenavigation2.dart';
+import 'package:b/components/trscnavigation2.dart';
 import 'package:flutter/services.dart';
 
 class Transaction extends StatefulWidget {
@@ -14,40 +16,58 @@ class Transaction extends StatefulWidget {
 
 class _TransactionState extends State<Transaction> {
   List<String> transactionTypes = ['All', 'Debit', 'Credit'];
-
+  void signUserIn() {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-            child: Column(
-          children: [_buildHeader(), Expanded(child: _scroll())],
-        )),
-        bottomNavigationBar: BottomAppBar(
-          height: 72,
-          child: Stack(
-            children: <Widget>[
-              // Top part with blue color
-              Container(
-                decoration: BoxDecoration(
-                  color: Color(0xFF022E64),
-                ),
+      body: SafeArea(
+          child: Column(
+        children: [_buildHeader(), Expanded(child: _scroll())],
+      )),
+      bottomNavigationBar: BottomAppBar(
+        height: 72,
+        child: Stack(
+          children: <Widget>[
+            // Top part with blue color
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
               ),
-              // Bottom part with a white trapezium shape
-              ClipPath(
+            ),
+            // Bottom part with a white trapezium shape
+            Container(
+              child: ClipPath(
                 clipper: TrapeziumClipper(),
                 child: Container(
-                  color: Colors.white, // Set the color for the bottom part
-                  padding: EdgeInsets.all(8.0),
-                  child: Column(
-                    children: <Widget>[],
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                  ),
-                  width: double.infinity,
+                  color: Color(0xFF022E64),
+                  // Set the color for the bottom part
                 ),
               ),
-            ],
-          ),
-        ));
+            ),
+            Row(
+              children: [
+                Expanded(
+                  flex: 1, // Adjust the flex values as needed
+                  child: Container(
+                    child: HomeNav(
+                      onTap: signUserIn,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1, // Adjust the flex values as needed
+                  child: Container(
+                    child: TrscNav(
+                      onTap: signUserIn,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   Widget _scroll() {
@@ -58,6 +78,7 @@ class _TransactionState extends State<Transaction> {
           return Center(child: Text("${data.error}"));
         } else if (data.hasData) {
           var items = data.data as List<CustomerTransactionData>;
+          items = items.reversed.toList();
           return ListView.builder(
             itemCount: items.length,
             itemBuilder: (context, index) {
@@ -69,7 +90,14 @@ class _TransactionState extends State<Transaction> {
                     height: 32.0,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: [Color(0xFF022E64), Color(0xFF0E5CBD)],
+                        colors: [
+                          items[index].transactionDirection == 'C'
+                              ? Color(0xFFE0AD0F)
+                              : Color(0xFF022E64),
+                          items[index].transactionDirection == 'C'
+                              ? Color(0xFFA07701)
+                              : Color(0xFF0E5CBD),
+                        ],
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                       ),
@@ -91,16 +119,33 @@ class _TransactionState extends State<Transaction> {
                     height: 1.20,
                   ),
                 ),
-                subtitle: Text(
-                  items[index].transactionNarration.toString(),
-                  style: TextStyle(
-                    color: Color(0xFF616161),
-                    fontSize: 12,
-                    fontFamily: 'Open Sans',
-                    fontWeight: FontWeight.w400,
-                    height: 1.40,
-                    letterSpacing: 0.18,
-                  ),
+                subtitle: Row(
+                  children: [
+                    Text(
+                      '#',
+                      style: TextStyle(
+                        color: items[index].transactionDirection == 'C'
+                            ? Color(0xFFE0AD0F)
+                            : Color(0xFF022E64),
+                        fontSize: 12,
+                        fontFamily: 'Open Sans',
+                        fontWeight: FontWeight.w700,
+                        height: 1.40,
+                        letterSpacing: 0.18,
+                      ),
+                    ),
+                    Text(
+                      items[index].transactionNarration.toString(),
+                      style: TextStyle(
+                        color: Color(0xFF616161),
+                        fontSize: 12,
+                        fontFamily: 'Open Sans',
+                        fontWeight: FontWeight.w400,
+                        height: 1.40,
+                        letterSpacing: 0.18,
+                      ),
+                    ),
+                  ],
                 ),
                 trailing: Text(
                   items[index].transactionDate.toString(),

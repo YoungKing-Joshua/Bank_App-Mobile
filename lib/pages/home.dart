@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:b/components/app_version.dart';
 import 'package:b/components/homenavigation.dart';
 import 'package:b/components/trscnavigation.dart';
-import 'package:b/pages/test.dart';
+import 'package:b/widgets/tripezuim.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);

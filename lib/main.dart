@@ -6,7 +6,7 @@ import 'package:b/pages/splash.dart';
 import 'package:b/widgets/bottomprofile.dart';
 import 'package:flutter/material.dart';
 import 'package:b/pages/transaction.dart';
-import 'package:b/pages/test.dart';
+import 'package:b/widgets/tripezuim.dart';
 import 'package:b/pages/frame19.dart';
 
 void main() {

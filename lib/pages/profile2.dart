@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:b/pages/test.dart';
+import 'package:b/widgets/tripezuim.dart';
 import 'package:b/components/my_textfield.dart';
 import 'package:b/components/square_tile.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:b/pages/test.dart';
+import 'package:b/widgets/tripezuim.dart';
 import 'package:b/data/moneyget.dart';
 
 class Transaction extends StatefulWidget {
