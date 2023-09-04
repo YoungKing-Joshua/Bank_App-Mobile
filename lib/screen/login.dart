@@ -9,27 +9,27 @@ import 'package:b/components/forgetpswd.dart';
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
 
-  // text editing controllers
+
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
-  // sign user in method
+
   void signUserIn(BuildContext context) {
-    // Use Navigator to push a new route (page) onto the stack
+  
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) =>
-            Splash(), // Replace YourNewPage with the desired page widget
+            Splash(), 
       ),
     );
   }
 
   void sendForget(BuildContext context) {
-    // Use Navigator to push a new route (page) onto the stack
+    
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) =>
-            ForgotPassword(), // Replace YourNewPage with the desired page widget
+            ForgotPassword(), 
       ),
     );
   }

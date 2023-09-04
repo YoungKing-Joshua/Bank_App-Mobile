@@ -13,20 +13,20 @@ class ResetPassword extends StatefulWidget {
 }
 
 class _ResetPasswordState extends State<ResetPassword> {
-  // text editing controllers
+
   final password1Controller = TextEditingController();
 
   final password2Controller = TextEditingController();
 
   final password3Controller = TextEditingController();
 
-  // sign user in method
+  
   void sendProfile(BuildContext context) {
-    // Use Navigator to push a new route (page) onto the stack
+   
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) =>
-            Home6(), // Replace YourNewPage with the desired page widget
+            Home6(), 
       ),
     );
   }

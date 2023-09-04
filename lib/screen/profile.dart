@@ -18,28 +18,28 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  // text editing controllers
+  
   final usernameController = TextEditingController();
 
   final passwordController = TextEditingController();
 
-  // sign user in method
+
   void signUserIn() {}
   void sendProfile(BuildContext context) {
-    // Use Navigator to push a new route (page) onto the stack
+    
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) =>
-            LoginPage(), // Replace YourNewPage with the desired page widget
+            LoginPage(), 
       ),
     );
   }
   void logout(BuildContext context) {
-    // Use Navigator to push a new route (page) onto the stack
+
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) =>
-            ResetPassword(), // Replace YourNewPage with the desired page widget
+            ResetPassword(), 
       ),
     );
   }

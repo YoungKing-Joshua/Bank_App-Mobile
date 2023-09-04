@@ -26,17 +26,17 @@ void sendHome(BuildContext context) {
   Navigator.of(context).push(
     MaterialPageRoute(
       builder: (context) =>
-          Home(), // Replace YourNewPage with the desired page widget
+          Home(), 
     ),
   );
 }
 
 void sendTrsc(BuildContext context) {
-  // Use Navigator to push a new route (page) onto the stack
+ 
   Navigator.of(context).push(
     MaterialPageRoute(
       builder: (context) =>
-          Transaction(), // Replace YourNewPage with the desired page widget
+          Transaction(), 
     ),
   );
 }
@@ -46,26 +46,26 @@ BottomAppBar _bottom() {
     height: 72,
     child: Stack(
       children: <Widget>[
-        // Top part with blue color
+      
         Container(
           decoration: BoxDecoration(
             color: Color(0xFF022E64),
           ),
         ),
-        // Bottom part with a white trapezium shape
+        
         Container(
           child: ClipPath(
             clipper: TrapeziumClipper(),
             child: Container(
               color: Colors.white,
-              // Set the color for the bottom part
+              
             ),
           ),
         ),
         Row(
           children: [
             Expanded(
-              flex: 1, // Adjust the flex values as needed
+              flex: 1, 
               child: Container(
                 child: HomeNav(
                   onTap: sendHome,

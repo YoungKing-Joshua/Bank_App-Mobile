@@ -10,7 +10,7 @@ class HomeNav extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        onTap(context); // Pass the context to the callback
+        onTap(context); 
       },
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 8),

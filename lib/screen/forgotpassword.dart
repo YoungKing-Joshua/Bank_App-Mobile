@@ -8,17 +8,17 @@ import 'package:b/components/square_tile.dart';
 class ForgotPassword extends StatelessWidget {
   ForgotPassword({super.key});
 
-  // text editing controllers
+  
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
-  // sign user in method
+
    void sendLogin(BuildContext context) {
-    // Use Navigator to push a new route (page) onto the stack
+    
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) =>
-            LoginPage(), // Replace YourNewPage with the desired page widget
+            LoginPage(), 
       ),
     );
   }

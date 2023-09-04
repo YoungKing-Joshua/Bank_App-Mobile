@@ -18,11 +18,11 @@ class _Home2State extends State<Home2> {
   void initState() {
     super.initState();
 
-    // Delay for 2 seconds and then navigate to the desired page
+   
     Future.delayed(Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => Home3(), // Replace with your destination page
+          builder: (context) => Home3(), 
         ),
       );
     });
@@ -112,27 +112,25 @@ class _Home2State extends State<Home2> {
                         color: items[index].transactionDirection == 'C'
                             ? Color(0x14E0AD0F)
                             : Color(
-                                0x1478C8E1), // Change to your desired color for 'C'
-                        // You can change this to another color or remove it
+                                0x1478C8E1), 
                         borderRadius: BorderRadius.circular(5.26),
                       ),
                       child: Center(
                         child: Text(
                           items[index].transactionDirection == 'C'
-                              ? 'Credit' // Text for 'C'
+                              ? 'Credit' 
                               : items[index].transactionDirection == 'D'
-                                  ? 'Debit' // Text for 'D'
-                                  : '', // You can change this to another text or remove it
+                                  ? 'Debit' 
+                                  : '', 
                           style: TextStyle(
                             color: items[index].transactionDirection == 'C'
                                 ? Color(0xFFE0AD0F)
                                 : Color(
-                                    0xFF022E64), // You can change the text color
-                            fontSize: 9,
+                                    0xFF022E64), 
                             fontFamily: 'Open Sans',
                             fontWeight: FontWeight.w600,
                             letterSpacing:
-                                0.18, // You can change the text color
+                                0.18, 
                           ),
                         ),
                       ),
@@ -200,7 +198,7 @@ class _Home2State extends State<Home2> {
 
       return transactionDataList;
     } catch (e) {
-      // Handle any potential errors during data loading
+      
       throw e;
     }
   }

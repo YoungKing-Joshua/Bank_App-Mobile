@@ -18,11 +18,10 @@ class _Home6State extends State<Home6> {
     void initState() {
     super.initState();
 
-    // Delay for 2 seconds and then navigate to the desired page
     Future.delayed(Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => Home7(), // Replace with your destination page
+          builder: (context) => Home7(),
         ),
       );
     });
@@ -99,17 +98,16 @@ class _Home6State extends State<Home6> {
                         color: items[index].transactionDirection == 'C'
                             ? Color(0x14E0AD0F)
                             : Color(
-                                0x1478C8E1), // Change to your desired color for 'C'
-                        // You can change this to another color or remove it
+                                0x1478C8E1),
                         borderRadius: BorderRadius.circular(5.26),
                       ),
                       child: Center(
                         child: Text(
                           items[index].transactionDirection == 'C'
-                              ? 'Credit' // Text for 'C'
+                              ? 'Credit' 
                               : items[index].transactionDirection == 'D'
-                                  ? 'Debit' // Text for 'D'
-                                  : '', // You can change this to another text or remove it
+                                  ? 'Debit'
+                                  : '',
                           style: TextStyle(
                             color: items[index].transactionDirection == 'C'
                                 ? Color(0xFFE0AD0F)

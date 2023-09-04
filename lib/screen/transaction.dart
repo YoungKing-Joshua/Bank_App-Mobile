@@ -22,21 +22,17 @@ class _TransactionState extends State<Transaction> {
   String selectedTransactionType = 'All';
 
   void sendHome() {
-    // Use Navigator to push a new route (page) onto the stack
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) =>
-            Home(), // Replace YourNewPage with the desired page widget
+        builder: (context) => Home(),
       ),
     );
   }
 
   void sendTrsc() {
-    // Use Navigator to push a new route (page) onto the stack
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) =>
-            Transaction(), // Replace YourNewPage with the desired page widget
+        builder: (context) => Transaction(),
       ),
     );
   }
@@ -45,63 +41,59 @@ class _TransactionState extends State<Transaction> {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: () {
-          // Navigate to the desired page when tapped
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) =>
-                  Profile(), // Replace with your destination page
+              builder: (context) => Profile(),
             ),
           );
-        }, child:Scaffold(
-      body: SafeArea(
-          child: Column(
-        children: [_buildHeader(), Expanded(child: _scroll())],
-      )),
-      bottomNavigationBar: BottomAppBar(
-        height: 72,
-        child: Stack(
-          children: <Widget>[
-            // Top part with blue color
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-              ),
-            ),
-            // Bottom part with a white trapezium shape
-            Container(
-              child: ClipPath(
-                clipper: TrapeziumClipper(),
-                child: Container(
-                  color: Color(0xFF022E64),
-                  // Set the color for the bottom part
+        },
+        child: Scaffold(
+          body: SafeArea(
+              child: Column(
+            children: [_buildHeader(), Expanded(child: _scroll())],
+          )),
+          bottomNavigationBar: BottomAppBar(
+            height: 72,
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-            ),
-            Row(
-              children: [
-                Expanded(
-                  flex: 1, // Adjust the flex values as needed
-                  child: Container(
-                    child: HomeNav(
-                      onTap: sendHome,
+                Container(
+                  child: ClipPath(
+                    clipper: TrapeziumClipper(),
+                    child: Container(
+                      color: Color(0xFF022E64),
                     ),
                   ),
                 ),
-                Expanded(
-                  flex: 1, // Adjust the flex values as needed
-                  child: Container(
-                    child: TrscNav(
-                      onTap: sendTrsc,
+                Row(
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        child: HomeNav(
+                          onTap: sendHome,
+                        ),
+                      ),
                     ),
-                  ),
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        child: TrscNav(
+                          onTap: sendTrsc,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
-          ],
-        ),
-      ),
-    );
-  );}
+          ),
+        ));
+  }
 
   Widget _scroll() {
     return FutureBuilder<List<CustomerTransactionData>>(
@@ -187,25 +179,24 @@ class _TransactionState extends State<Transaction> {
             decoration: BoxDecoration(
               color: items[index].transactionDirection == 'C'
                   ? Color(0x14E0AD0F)
-                  : Color(0x1478C8E1), // Change to your desired color for 'C'
-              // You can change this to another color or remove it
+                  : Color(0x1478C8E1),
               borderRadius: BorderRadius.circular(5.26),
             ),
             child: Center(
               child: Text(
                 items[index].transactionDirection == 'C'
-                    ? 'Credit' // Text for 'C'
+                    ? 'Credit'
                     : items[index].transactionDirection == 'D'
-                        ? 'Debit' // Text for 'D'
-                        : '', // You can change this to another text or remove it
+                        ? 'Debit'
+                        : '',
                 style: TextStyle(
                   color: items[index].transactionDirection == 'C'
                       ? Color(0xFFE0AD0F)
-                      : Color(0xFF022E64), // You can change the text color
+                      : Color(0xFF022E64),
                   fontSize: 9,
                   fontFamily: 'Open Sans',
                   fontWeight: FontWeight.w600,
-                  letterSpacing: 0.18, // You can change the text color
+                  letterSpacing: 0.18,
                 ),
               ),
             ),
@@ -418,7 +409,7 @@ class _TransactionState extends State<Transaction> {
 
       return transactionDataList;
     } catch (e) {
-      // Handle any potential errors during data loading
+      
       throw e;
     }
   }

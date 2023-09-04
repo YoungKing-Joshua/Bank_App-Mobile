@@ -25,7 +25,6 @@ class CustomerTransactionData {
 }
 
 class CustomerStaticData {
-  
   String? customerID;
   String? customerName;
   String? gender;

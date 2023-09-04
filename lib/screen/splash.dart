@@ -15,11 +15,11 @@ class _SplashState extends State<Splash> {
   void initState() {
     super.initState();
 
-    // Delay for 2 seconds and then navigate to the desired page
+  
     Future.delayed(Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => Home(), // Replace with your destination page
+          builder: (context) => Home(),
         ),
       );
     });

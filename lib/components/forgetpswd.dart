@@ -9,7 +9,7 @@ class Forget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        onTap(context); // Pass the context to the callback
+        onTap(context);
       },
       child: Container(
         height: 56,

@@ -18,11 +18,11 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
 
-    // Delay for 2 seconds and then navigate to the desired page
+   
     Future.delayed(Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => Home2(), // Replace with your destination page
+          builder: (context) => Home2(), 
         ),
       );
     });
