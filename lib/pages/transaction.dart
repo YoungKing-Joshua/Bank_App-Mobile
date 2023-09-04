@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:b/pages/test.dart';
 import 'package:b/data/money.dart';
-import 'package:flutter/services.dart' as rootBundle;
+import 'package:flutter/services.dart';
 
 class Transaction extends StatefulWidget {
   const Transaction({Key? key}) : super(key: key);
@@ -274,12 +274,20 @@ class _TransactionState extends State<Transaction> {
   }
 
   Future<List<CustomerTransactionData>> ReadJsonData() async {
-    final jsondata =
-        await rootBundle.rootBundle.loadString('lib/data/customer_data.json');
-    final list = json.decode(jsondata) as List<dynamic>;
+    try {
+      final jsondata =
+          await rootBundle.loadString('lib/data/customer_data.json');
+      final jsonData = json.decode(jsondata);
 
-    return list.map((e) => CustomerTransactionData.fromJson(e)).toList();
+      final List<CustomerTransactionData> transactionDataList =
+          (jsonData['customerTransactionData'] as List)
+              .map((item) => CustomerTransactionData.fromJson(item))
+              .toList();
 
-    
+      return transactionDataList;
+    } catch (e) {
+      // Handle any potential errors during data loading
+      throw e;
+    }
   }
 }
