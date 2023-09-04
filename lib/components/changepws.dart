@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
-class MyButton extends StatelessWidget {
-  final Function()? onTap;
+class ChangePswd extends StatelessWidget {
+  Function(BuildContext) onTap;
 
-  const MyButton({super.key, required this.onTap});
+  ChangePswd({required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        onTap(context); // Pass the context to the callback
+      },
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 0),
         height: 56,
