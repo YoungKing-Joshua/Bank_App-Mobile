@@ -17,10 +17,10 @@ class _TopState extends State<Top> {
   Widget _head() {
     return GestureDetector(
         onTap: () {
-          // Navigate to the desired page when "Back" is tapped
+          
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => Home(), // Replace with your back page
+              builder: (context) => Home(), 
             ),
           );
         },

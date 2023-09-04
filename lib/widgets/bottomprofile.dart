@@ -22,7 +22,7 @@ class _ProfileBottomState extends State<ProfileBottom> {
 }
 
 void sendHome(BuildContext context) {
-  // Use Navigator to push a new route (page) onto the stack
+ 
   Navigator.of(context).push(
     MaterialPageRoute(
       builder: (context) =>
@@ -73,7 +73,7 @@ BottomAppBar _bottom() {
               ),
             ),
             Expanded(
-              flex: 1, // Adjust the flex values as needed
+              flex: 1, 
               child: Container(
                 child: TrscNav(
                   onTap: sendTrsc,

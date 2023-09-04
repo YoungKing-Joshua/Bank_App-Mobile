@@ -17,11 +17,11 @@ class _TopState extends State<Top> {
   Widget _head() {
     return GestureDetector(
         onTap: () {
-          // Navigate to the desired page when tapped
+          
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) =>
-                  Profile(), // Replace with your destination page
+                  Profile(),
             ),
           );
         },

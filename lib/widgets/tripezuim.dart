@@ -5,11 +5,11 @@ class TrapeziumClipper extends CustomClipper<Path> {
   Path getClip(Size size) {
     final path = Path();
     final double trapeziumHeight =
-        size.height; // Set the height of the trapezium
+        size.height;
 
     path.moveTo(size.width, 0.0);
     path.lineTo(size.width * 53 / 100,
-        0.0); // Adjust the points to create a right-angle trapezium
+        0.0); 
     path.lineTo(size.width * 47 / 100, trapeziumHeight);
     path.lineTo(size.width, trapeziumHeight);
     path.close();
