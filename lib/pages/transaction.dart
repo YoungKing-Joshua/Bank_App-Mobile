@@ -109,15 +109,54 @@ class _TransactionState extends State<Transaction> {
                     ),
                   ),
                 ),
-                title: Text(
-                  items[index].transactionAmount.toString(),
-                  style: TextStyle(
-                    color: Color(0xFF212121),
-                    fontSize: 16,
-                    fontFamily: 'Open Sans',
-                    fontWeight: FontWeight.w700,
-                    height: 1.20,
-                  ),
+                title: Row(
+                  children: [
+                    Text(
+                      'GHC ' + items[index].transactionAmount.toString(),
+                      style: TextStyle(
+                        color: Color(0xFF212121),
+                        fontSize: 16,
+                        fontFamily: 'Open Sans',
+                        fontWeight: FontWeight.w700,
+                        height: 1.20,
+                      ),
+                    ),
+                    const SizedBox(width: 7.01),
+                    Container(
+                      width: 42.52,
+                      height: 22.51,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8.76, vertical: 5.26),
+                      decoration: BoxDecoration(
+                        color: items[index].transactionDirection == 'C'
+                            ? Color(0x14E0AD0F)
+                            : Color(
+                                0x1478C8E1), // Change to your desired color for 'C'
+                        // You can change this to another color or remove it
+                        borderRadius: BorderRadius.circular(5.26),
+                      ),
+                      child: Center(
+                        child: Text(
+                          items[index].transactionDirection == 'C'
+                              ? 'Credit' // Text for 'C'
+                              : items[index].transactionDirection == 'D'
+                                  ? 'Debit' // Text for 'D'
+                                  : '', // You can change this to another text or remove it
+                          style: TextStyle(
+                            color: items[index].transactionDirection == 'C'
+                                ? Color(0xFFE0AD0F)
+                                : Color(
+                                    0xFF022E64), // You can change the text color
+                            fontSize: 9,
+                            fontFamily: 'Open Sans',
+                            fontWeight: FontWeight.w600,
+                            letterSpacing:
+                                0.18, // You can change the text color
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
                 ),
                 subtitle: Row(
                   children: [
