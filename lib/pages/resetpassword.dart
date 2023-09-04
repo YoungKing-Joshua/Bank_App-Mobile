@@ -1,3 +1,4 @@
+import 'package:b/screen/login.dart';
 import 'package:flutter/material.dart';
 import 'package:b/widgets/top4.dart';
 import 'package:b/components/changebutton.dart';
@@ -13,7 +14,15 @@ class ResetPassword extends StatelessWidget {
   final password3Controller = TextEditingController();
 
   // sign user in method
-  void SendLogin() {}
+  void SendLogin(BuildContext context) {
+    // Use Navigator to push a new route (page) onto the stack
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) =>
+            LoginPage(), // Replace YourNewPage with the desired page widget
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +55,7 @@ class ResetPassword extends StatelessWidget {
                     obscureText: true,
                   ),
                   const SizedBox(height: 47),
-                  ChangePassword(onTap: signUserIn),
+                  ChangePassword(onTap: SendLogin),
                 ],
               ),
             ),

@@ -1,3 +1,4 @@
+import 'package:b/screen/home3.dart';
 import 'package:flutter/material.dart';
 import 'package:b/data/money.dart';
 import 'package:flutter/services.dart';
@@ -5,8 +6,28 @@ import 'dart:convert';
 import 'package:b/widgets/top2.dart';
 import 'package:b/widgets/bottomprofile.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class Home2 extends StatefulWidget {
+  const Home2({Key? key}) : super(key: key);
+
+  @override
+  State<Home2> createState() => _Home2State();
+}
+
+class _Home2State extends State<Home2> {
+  @override
+  void initState() {
+    super.initState();
+
+    // Delay for 2 seconds and then navigate to the desired page
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) => Home3(), // Replace with your destination page
+        ),
+      );
+    });
+  }
+
 
 
 

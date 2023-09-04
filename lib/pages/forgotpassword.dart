@@ -39,7 +39,6 @@ class ForgotPassword extends StatelessWidget {
                     obscureText: true,
                   ),
                   const SizedBox(height: 68),
-                  ResetButton(onTap: signUserIn),
                 ],
               ),
             ),

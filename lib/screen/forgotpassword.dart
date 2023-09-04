@@ -1,3 +1,4 @@
+import 'package:b/screen/login.dart';
 import 'package:b/widgets/top4.dart';
 import 'package:flutter/material.dart';
 import 'package:b/components/resetbutton.dart';
@@ -12,7 +13,15 @@ class ForgotPassword extends StatelessWidget {
   final passwordController = TextEditingController();
 
   // sign user in method
-  void signUserIn() {}
+   void sendLogin(BuildContext context) {
+    // Use Navigator to push a new route (page) onto the stack
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) =>
+            LoginPage(), // Replace YourNewPage with the desired page widget
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +48,7 @@ class ForgotPassword extends StatelessWidget {
                     obscureText: true,
                   ),
                   const SizedBox(height: 68),
-                  ResetButton(onTap: signUserIn),
+                  ResetButton(onTap: sendLogin),
                 ],
               ),
             ),

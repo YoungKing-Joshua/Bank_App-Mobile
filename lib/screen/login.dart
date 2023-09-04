@@ -1,4 +1,4 @@
-import 'package:b/pages/forgotpassword.dart';
+import 'package:b/screen/forgotpassword.dart';
 import 'package:b/screen/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:b/components/loginB.dart';
@@ -15,25 +15,24 @@ class LoginPage extends StatelessWidget {
 
   // sign user in method
   void signUserIn(BuildContext context) {
-  // Use Navigator to push a new route (page) onto the stack
-  Navigator.of(context).push(
-    MaterialPageRoute(
-      builder: (context) =>
-          Splash(), // Replace YourNewPage with the desired page widget
-    ),
-  );
-}
+    // Use Navigator to push a new route (page) onto the stack
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) =>
+            Splash(), // Replace YourNewPage with the desired page widget
+      ),
+    );
+  }
 
- void sendForget(BuildContext context) {
-  // Use Navigator to push a new route (page) onto the stack
-  Navigator.of(context).push(
-    MaterialPageRoute(
-      builder: (context) =>
-          ForgotPassword(), // Replace YourNewPage with the desired page widget
-    ),
-  );
-}
-
+  void sendForget(BuildContext context) {
+    // Use Navigator to push a new route (page) onto the stack
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) =>
+            ForgotPassword(), // Replace YourNewPage with the desired page widget
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
