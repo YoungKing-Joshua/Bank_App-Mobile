@@ -14,40 +14,12 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: ProfileBottom(),
-
-      /*Row(
-        children: [
-          Expanded(
-            flex: 1, // Adjust the flex values as needed
-            child: Container(
-              height: 41,
-              color: Color(0xFFE0AD0F), // Color for the left box
-              child: AppVersion(
-                onTap: signUserIn,
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 1, // Adjust the flex values as needed
-            child: Container(
-              height: 41,
-
-              color: Color(0xFFA07701), // Color for the right box
-              child: AppVersion(
-                onTap: signUserIn,
-              ),
-            ),
-          ),
-        ],
-      ),
-      */
       body: SafeArea(
           child: Column(
-        children: [Top(), Expanded(child: _scroll())],
+        children: [Top()],
       )),
     );
   }
-
 
   Widget _scroll() {
     return FutureBuilder<List<CustomerTransactionData>>(
