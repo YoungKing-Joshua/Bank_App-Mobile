@@ -10,7 +10,7 @@ This mobile bank app built  has the following key pages and features:
 
 3. **Home Page**: Users can press the "Transaction" button at the bottom of the screen to navigate to the "Transaction Page." Tapping on the picture at the top of both the home and transaction pages will send users to the "Profile Page."
 
-4. **Transaction Page**: - Tapping the "10000 transaction" brings up "Frame19" as a bottom sheet.
+4. **Transaction Page**: - Tapping the "GHC 10,000.00" transaction brings up "Frame19" as a bottom sheet.
 
 5. **Profile Page**: Users can tap on "Change Account Password" to navigate to the "Change Password Page." Tapping the back button in the top bar will send them straight to the home page. Tapping "Logout" sends them back to the login page.
 
